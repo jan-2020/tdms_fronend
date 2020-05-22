@@ -1,8 +1,6 @@
-import {combineReducers } from "redux";
-import errorReducer from "./errorReducers";
-import userReducer from "./userReducers";
-
-export default combineReducers({
-    errors:errorReducer,
-    userFromCombineReducer:userReducer
+import {combineReducers} from 'redux';
+import permissionReducers from './permissionReducers';
+export default combineReducers ({
+	permissions:permissionReducers
 });
+
