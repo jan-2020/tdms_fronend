@@ -1,23 +1,27 @@
-import React from 'react';
-import './App.css';
-import LandingPage from './components/project/LandingPage';
+import logo from "./logo.svg";
+import "./App.css";
+
+import React, { Component } from "react";
+import Dashboard from "./components/Dashboard";
+import Header from "./components/layout/Header";
 import "bootstrap/dist/css/bootstrap.min.css";
-import TraineeDashboard from './components/TraineeDashboard';
-import {BrowserRouter as Router,Route} from "react-router-dom";
-import {Provider} from "react-redux";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import { Provider } from "react-redux";
 import store from "./store";
-function App() {
-  return (
+import Footer from "./components/layout/Footer";
+
+class App extends Component {
+  render() {
+    return (
       <Provider store={store}>
-      
-      <Router>
-      <LandingPage/>
-      <Route path="/" component={LandingPage} />
-      <Route path="/traineeDashboard" component={TraineeDashboard} />
-      </Router>
+        <Router>
+          <Header />
+          <Route path="/pendingrequests" component={Dashboard} />
+         </Router>
+         <Footer/>
       </Provider>
-    
-  );
+    );
+  }
 }
 
 export default App;
