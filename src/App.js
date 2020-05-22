@@ -1,22 +1,22 @@
 import React from 'react';
+import logo from './logo.svg';
 import './App.css';
-import LandingPage from './components/project/LandingPage';
-import "bootstrap/dist/css/bootstrap.min.css";
-import TraineeDashboard from './components/TraineeDashboard';
-import {BrowserRouter as Router,Route} from "react-router-dom";
-import {Provider} from "react-redux";
-import store from "./store";
+import Header from'./component/layout/Header'
+import { BrowserRouter as Router,Route } from 'react-router-dom';
+import SidePanel from './component/SidePanel'
+import Heading from './component/Heading'
+import CardFormModule from './component/CardFormModule'
+import Dashboard from './component/Dashboard'
+
+
+
 function App() {
   return (
-      <Provider store={store}>
-      
-      <Router>
-      <LandingPage/>
-      <Route path="/" component={LandingPage} />
-      <Route path="/traineeDashboard" component={TraineeDashboard} />
-      </Router>
-      </Provider>
-    
+    <Router>
+      <Header/>
+      <Route path="/Dashboard" component={Dashboard}/>
+    <CardFormModule/>
+    </Router>
   );
 }
 
